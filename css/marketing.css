@@ -1,0 +1,200 @@
+
+body {
+    background-color: yellow;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+.email-mockup-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.email-mockup-container h2 {
+    font-size: 24px;
+    color: #d2691e;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.email-mockup-container p {
+    margin: 10px 0;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
+
+.social-media-mockup-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-media-mockup-container h2 {
+    font-size: 24px;
+    color: #d2691e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-post {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #333;
+    font-size: 16px;
+}
+
+.facebook {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.instagram {
+    background-color: #e4405f;
+    color: #fff;
+}
+
+.tiktok {
+    background-color: #010101;
+    color: #fff;
+}
+
+.social-post h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    height: 50px;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-section .content {
+    padding: 20px;
+}
+
+form fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form legend {
+    font-size: 20px;
+    color: #d2691e;
+    font-weight: 600;
+}
+
+form label {
+    font-size: 16px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container button {
+    background-color: #d2691e;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #b55d1e;
+}
+
+button[type="reset"] {
+    background-color: #777;
+}
+
+button[type="reset"]:hover {
+    background-color: #555;
+}

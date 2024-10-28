@@ -1,0 +1,253 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEC;
+}
+
+header {
+    color: #4F4A45;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 70px 20px;
+}
+
+header img {
+    width: auto;
+    height: auto;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1650px;
+    padding: 20px;
+}
+
+.left-container {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-right: 30px;
+    max-height: 92vh; /* Set maximum height */
+    overflow-y: auto; /* Add vertical scrollbar when content exceeds the height */
+    max-width: 60%;
+}
+
+.left-container p {
+    font-size: 18px;
+    color: #4F4A45;
+    font-weight: 300;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    position: sticky;
+    top: -15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+
+.item-btn{
+    background-color: transparent;
+    border: solid 1px #4F4A45;
+    color: #4F4A45;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+
+}
+.nav-button {
+    background-color: transparent;
+    border: solid 1px #4F4A45;
+    color: #4F4A45;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+.nav-button:hover{
+    background-color: #4F4A45;
+    color: #fff;
+}
+.nav-button.active {
+    background-color: #4F4A45;
+    color: #fff;
+}
+.header-for-choices {
+    font-size: 24px;
+    color: #4F4A45;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.item {
+    background-color: #EEEEEC;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 430px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.item-details {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.item-image {
+    max-width: 20%;
+    height: auto;
+}
+
+div[class^='item-title']{
+    color: #4F4A45;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.item-description {
+    font-size: 16px;
+    color: #4F4A45;
+    font-weight: 300;
+}
+
+div[class^='item-price']{
+    font-size: 18px;
+    font-weight: 600;
+    color: #4F4A45;
+    margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.right-container {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 1000px;
+    max-height: 92vh;
+    overflow-y: auto;
+    max-width: 27%;
+    margin-left: -15px;
+    padding: 15px;
+}
+.right-container h2{
+    font-weight: 600;
+    color: #4F4A45;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.undo-icon {
+    margin-top: 15px;
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    color: #4F4A45;
+}
+.checkout-button {
+    background-color: #4F4A45;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    width: 23%;
+    height: 60px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+
+}
+
+.clicked-items {
+    max-height: calc(82vh - 130px);
+    overflow-y: auto;
+    margin-top: 15px;
+    position: relative;
+}
+.clicked-items::-webkit-scrollbar {
+    display: none;
+}
+
+.selected-item {
+    color: #4F4A45;
+    padding: 20px;
+    margin-top: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #EEEEEC;
+    max-height: 100px;
+}
+.horizontal-line {
+    border-top: 1px solid #4F4A45;
+    margin-top: 20px;
+}
+
+.subtotal-container, .total-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.subtotal-label, .total-label {
+    color: #4F4A45;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.subtotal-value, .total-value {
+    font-size: 18px;
+    color: #4F4A45;
+}
+.totals-container{
+    position: absolute;
+    bottom: 120px;
+    width: 23%;
+}
+.plus-icon {
+    font-size: 18px;
+    right: 15px;
+    bottom: 150;
+    position: absolute;
+}
+
+.remove-icon{
+    font-size: 18px;
+    position: absolute;
+    bottom: 150;
+    right: 40px;
+}
+.selected-item span{
+    padding-right: 50px;
+}
+.m-cnav{
+    display: none;
+}
+.mid-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

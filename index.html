@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Tatak Lokal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap" rel="stylesheet">
+    <style>
+        .footer {
+            color: #fff;
+            text-align: right;
+            position: relative;
+            bottom: 150px;
+            right: 40px;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+		footer{
+			height: 0;
+		}
+        .footer p {
+            margin: 0;
+            font-size: 15px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 200;
+            padding-top: 5px;
+        }
+
+        .footer i {
+            font-size: 24px;
+            margin-right: 10px;
+            padding-top: 10px;
+        }
+        @media screen and (max-width: 629px) {
+            header img{
+                height: 70px;
+                padding-top: 12px;
+                margin-top: 10px;
+                padding-left: 15px;
+            }
+            header{
+                margin: 0;
+                padding: 0;
+                padding-bottom: 7px;
+            }
+            .footer{
+                bottom: 125px;
+                right: 20px;
+            }
+            .footer p{
+                font-size: 11.5px;
+            }
+            .footer i{
+                font-size: 20px;
+            }
+            .m-content{
+                display: block;
+                margin: 0;
+                padding: 0;
+                text-align: right;
+                color: #4F4A45;
+                max-height: 220px;
+            }
+            .m-content img{
+                border-radius: 15px;
+                width: auto;
+                height: 200px;
+                margin-right: 10px;
+                box-shadow: 2px 2px 10px #4F4A45;
+            }
+            .m-content h2{
+                font-size: 22.5px;
+                padding-top: 20px;
+            }
+            .m-content p{
+                font-size: 14px;
+            }
+            
+            .container.active {
+                display: block;
+                z-index: -1;
+            }
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu a{
+                text-decoration: none;
+                color: #4F4A45;
+                
+            }
+            .mobile-menu li{
+                font-family: 'DM Sans', sans-serif;
+                font-weight: 600;
+                list-style: none;
+                border-bottom: solid 2px #4F4A45;
+                font-size: 20px;
+                letter-spacing: 5px;
+                padding-top: 55px;
+                padding-bottom: 10px;
+                margin-left: -25px;
+            }
+            .mobile-menu ul{
+                display: inline-block;
+                padding-bottom: 50px;
+            }
+            .mobile-menu.active {
+                text-align: center;
+                display: block;
+                width: 75%;
+                max-height: 67.5vh;
+                background-color: white;
+                box-shadow: 0px 0px 10px #776B5D;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 999;
+                border-radius: 15px;
+            }
+            .burger-menu {
+                display: block;
+                padding-top: 20px;
+                padding-right: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .left-section .content {
+                display: none;
+            }
+            .left-section .content img{
+                display: block;
+                margin: 0;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .right-section {
+                width: 100%;
+                height: 350px;
+                flex: auto;
+                text-align: center;
+                margin-top: 150px;
+                
+            }
+            .right-section .content{
+                margin-top: 15px;
+                max-width: 90%;
+                right: 0;
+                text-align: left;
+                position: absolute;
+            }
+            .right-section h2 {
+                font-size: 22.5px;
+            }
+
+            .right-section p {
+                font-size: 14px;
+                padding-bottom: 10px;
+            }
+            .button{
+                margin: 0;
+                padding-bottom: 9px;
+            }
+            .section-text{
+                padding-left: 0;
+                margin-top: 0;
+            }
+        }
+		@media screen and (max-width: 1464px){
+			.right-section h2{
+				font-size: 50px;
+			}
+		}
+        @media screen and (min-width: 630px) and (max-width: 1350px) {
+            header img{
+                height: 70px;
+                padding-top: 12px;
+                margin-top: 10px;
+                padding-left: 15px;
+            }
+            header{
+                margin: 0;
+                padding: 0;
+                padding-bottom: 7px;
+            }
+            .m-content{
+                display: block;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                color: #4F4A45;
+                max-height: 220px;
+            }
+            .m-content img{
+                border-radius: 15px;
+                width: auto;
+                height: 250px;
+                box-shadow: 2px 2px 10px #4F4A45;
+            }
+            .m-content h2{
+                font-size: 30px;
+                padding-top: 20px;
+            }
+            .m-content p{
+                font-weight: 200;
+                font-size: 19px;
+            }
+            
+            .container.active {
+                display: block;
+                z-index: -1;
+            }
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu a{
+                text-decoration: none;
+                color: #4F4A45;
+                
+            }
+            .mobile-menu li{
+                font-family: 'DM Sans', sans-serif;
+                font-weight: 600;
+                list-style: none;
+                border-bottom: solid 2px #4F4A45;
+                font-size: 20px;
+                letter-spacing: 5px;
+                padding-top: 55px;
+                padding-bottom: 10px;
+                margin-left: -25px;
+            }
+            .mobile-menu ul{
+                display: inline-block;
+                padding-bottom: 50px;
+            }
+            .mobile-menu.active {
+                text-align: center;
+                display: block;
+                width: 75%;
+                max-height: 67.5vh;
+                background-color: white;
+                box-shadow: 0px 0px 10px #776B5D;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 999;
+                border-radius: 15px;
+            }
+            .burger-menu {
+                display: block;
+                padding-top: 20px;
+                padding-right: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .left-section .content {
+                display: none;
+            }
+            .left-section .content img{
+                display: block;
+                margin: 0;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .right-section {
+                width: 100%;
+                height: 54.3vh;
+                max-height: 100vh;
+                flex: auto;
+                text-align: center;
+                margin-top: 225px;
+                
+            }
+            .right-section .content{
+                margin-top: 15px;
+                max-width: 90%;
+                text-align: left;
+                position: absolute;
+            }
+            .right-section h2 {
+                font-size: 30px;
+            }
+
+            .right-section p {
+                font-size: 19px;
+                font-weight: 200;
+                padding-bottom: 10px;
+            }
+            .button{
+                margin: 0;
+                padding-bottom: 9px;
+            }
+            .section-text{
+                padding-left: 0;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Your Logo">
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/order">Order</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/order">Order</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="left-section">
+            <div class="content">
+                <div class="image">
+                    <div class="corner-box top-left"></div>
+                    <div class="corner-box top-right"></div>
+                    <div class="corner-box bottom-left"></div>
+                    <div class="corner-box bottom-right"></div>
+                    <img class="image" src="assets/coffee.png" alt="Image">
+                </div>
+                <h2 class="section-header">100% FRESH</h2>
+                <p class="section-text">Experience the purest sip of perfection. Our 100% fresh coffee beans are carefully sourced and expertly roasted to deliver unmatched flavor and quality.</p>
+            </div>
+            <div class="m-content">
+                <img src="assets/coffee.jpg" alt="">
+                <h2>100% FRESH</h2>
+                <p>Experience the purest sip of perfection. Our 100% fresh coffee beans are carefully sourced and expertly roasted to deliver unmatched flavor and quality.</p>
+
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="content">
+                <h2 class="section-header">Best Coffee In Town.</h2>
+                <p class="section-text">Savor every cup of our coffee, where quality meets the perfect brew, defining the best coffee experience in town.</p>
+                <button class="button">Learn More</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Tatak Lokal. All rights reserved.</p>
+            <p>Design by Levin D. Mallari</p>
+            <div>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="https://kit.fontawesome.com/fb6c3ca771.js" crossorigin="anonymous"></script>
+</body>
+</html>

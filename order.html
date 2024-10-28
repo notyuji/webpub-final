@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order | Prom Coffee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/order.css">
+    <style>
+		.search-bar {
+
+            padding: 8px;
+            border: solid 1px #4F4A45;
+            border-radius: 20px;
+            font-size: 16px;
+            width: 200px;
+        }
+        .selected-item span {
+            padding: 0;
+        }
+        @media screen and (max-width: 629px)  {
+            .right-container{
+                display: none;
+            }
+            .nav-buttons .nav-button{
+                 font-size: 11px;
+                 padding: 10px;
+            }
+            .left-container{
+                max-width: 100%;
+                margin: 0;
+                max-height: 85vh;
+                border-radius: 8px;
+            }
+            .left-container p{
+                font-size: 16px;
+            }
+            .p-logo{
+                width: auto;
+                height: 75px;
+            }
+            .header-for-choices{
+                font-size: 17px;
+            }
+            .item-title{
+                font-size: 12px;
+            }
+            .item-description{
+                font-size: 10px;
+            }
+            .item-price{
+                font-size: 13px;
+            }
+            .item-image{
+                max-width: 35%;
+                padding-right: 10px;
+            }
+            .centered-container{
+                margin-top: 65px;
+            }
+            .undo-icon{
+                position: fixed;
+                top: 7px;
+                right: 20px;
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 5px;
+            }
+            .cart-icon {
+                color: #4F4A45;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                cursor: pointer;
+                font-size: 24px;
+                z-index: 999;
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 5px;
+            }
+            .m-cnav .store-icon{
+                color: #4F4A45;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                cursor: pointer;
+                font-size: 24px;
+                z-index: 999;
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 5px;
+            }.m-cnav .store-icon.active{
+                display: block;
+            }
+            .m-cnav .cart-icon.hide{
+                display: none;
+            }
+            .m-cnav{
+                display: block;
+            }
+            .left-container.active{
+                display: none;
+            }
+            .right-container.active{
+                display: block;
+                max-width: 100%;
+                margin: 0;
+                height: 85vh;
+            }
+            .subtotal-label, .total-label{
+                font-size: 14px;
+            }
+            .totals-container{
+                width: 82.5%;
+            }
+            .checkout-button {
+                display: block;
+                margin: 0 auto;
+                width: 82.5%;
+            }
+            .mid-total{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="m-cnav">
+        <i class="fas fa-store store-icon" onclick="openStore()"></i>
+        <i class="fas fa-shopping-basket cart-icon" onclick="openCart()"></i>
+        <i class="fas fa-arrow-left undo-icon" onclick="goBack()"></i>
+    </div>
+    <div class="centered-container">
+        <div class="left-container">
+            <a href="index.html"><img src="assets/logo.png" alt="Prom Coffee Logo" class="p-logo"></a>
+            <p>Choose your favorite hot espresso drink.</p>
+            <input type="text" class="search-bar" placeholder="Search...">
+            <div class="nav-buttons">
+                <div class="nav-button" onclick="fetchMenuItems('Hot Espresso')">Hot Espresso</div>
+                <div class="nav-button" onclick="fetchMenuItems('Iced Espresso')">Iced Espresso</div>
+                <div class="nav-button" onclick="fetchMenuItems('Pasta & Sandwiches')">Pasta & Sandwiches</div>
+            </div>
+            <div class="header-for-choices hot-espresso-header">Hot Espresso</div>
+            <div class="item-container hot-espresso-items"></div>
+            <div class="header-for-choices iced-espresso-header">Iced Espresso</div>
+            <div class="item-container iced-espresso-items"></div>
+            <div class="header-for-choices pasta-sandwiches-header">Pasta & Sandwiches</div>
+            <div class="item-container pasta-sandwiches-items"></div>
+        </div>
+        
+        <div class="right-container">
+            <i class="fas fa-arrow-left undo-icon" onclick="goBack()"></i>
+            <h2>Basket</h2>
+            <div class="clicked-items" id="clickedItemsContainer"></div>
+            <div class="mid-total">
+                <div class="totals-container">
+                    <div class="subtotal-container">
+                        <span class="subtotal-label">Subtotal:</span>
+                        <span id="subtotal">₱0.00</span>
+                    </div>
+                    <div class="total-container">
+                        <span class="total-label">Total (VAT incl.):</span>
+                        <span id="total">₱0.00</span>
+                    </div>
+                </div>
+                <button class="checkout-button" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/fb6c3ca771.js" crossorigin="anonymous"></script>
+    <script>
+        function openStore() {
+            var showCart = document.querySelector('.cart-icon');
+            var showLeft = document.querySelector('.left-container');
+            var hideStore = document.querySelector('.store-icon');
+            var hideRight = document.querySelector('.right-container');
+            showCart.classList.toggle('active');
+            showCart.classList.remove('hide');
+            showLeft.classList.remove('active');
+            hideStore.classList.remove('active');
+            hideRight.classList.toggle('active');
+        }
+        function openCart() {
+            var divRight = document.querySelector('.right-container');
+            var divLeft = document.querySelector('.left-container');
+            var showStore = document.querySelector('.store-icon');
+            var hideCart = document.querySelector('.cart-icon');
+            showStore.classList.toggle('active');
+            divRight.classList.toggle('active');
+            divLeft.classList.toggle('active');
+            hideCart.classList.toggle('hide');
+        }
+        function goBack() {
+            window.history.back();
+        }
+        function fetchMenuItems(category) {
+            document.querySelectorAll('.header-for-choices').forEach(header => {
+                header.style.display = '';
+            });
+            document.querySelectorAll('.item-container').forEach(container => {
+                container.innerHTML = '';
+            });
+
+            const header = document.querySelector(`.${category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}-header`);
+            const itemsContainer = document.querySelector(`.${category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}-items`);
+
+            if (header && itemsContainer) {
+                header.style.display = 'block';
+                fetch('http://localhost:3000/api/products')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        data.forEach(item => {
+                            console.log(`Item: ${item.name}, Category: ${item.category}`);
+                            if (item.category === category) {
+                                const itemDiv = document.createElement('div');
+                                itemDiv.className = 'item';
+                                itemDiv.innerHTML = `
+                                    <div class="item-details">
+                                        <div class="item-title">${item.name}</div>
+                                        <div class="item-description">${item.description}</div>
+                                        <div class="item-price">₱${item.price.toFixed(2)}</div>
+                                        <button class="item-btn"onclick="addToCart(${item.id})">Add to Cart</button>
+                                    </div>
+                                    <img class="item-image" src="${item.image}" alt="${item.name}">
+                                `;
+                                itemsContainer.appendChild(itemDiv);
+                            }
+                        });
+                    })
+                    .catch(error => console.error('Error fetching products:', error));
+            }
+        }
+        function addToCart(itemId) {
+            fetch('http://localhost:3000/api/cart', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ itemId, quantity: 1 })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(cart => {
+                console.log('Updated Cart:', cart);
+                updateCart();
+            })
+            .catch(error => console.error('Error adding to cart:', error));
+        }
+
+        function updateCart() {
+            fetch('http://localhost:3000/api/cart')
+                .then(response => response.json())
+                .then(data => {
+                    const clickedItemsContainer = document.getElementById('clickedItemsContainer');
+                    const subtotalElement = document.getElementById('subtotal');
+                    const totalElement = document.getElementById('total');
+                    clickedItemsContainer.innerHTML = '';
+
+                    let subtotal = 0;
+                    data.forEach(cartItem => {
+                        const itemTotal = cartItem.price * cartItem.quantity;
+                        subtotal += itemTotal;
+
+                        const cartItemDiv = document.createElement('div');
+                        cartItemDiv.className = 'selected-item';
+                        cartItemDiv.innerHTML = `
+                            ${cartItem.name} - ₱${cartItem.price.toFixed(2)} x 
+                            <button onclick="changeQuantity(${cartItem.id}, -1)">-</button>
+                            <span>${cartItem.quantity}</span>
+                            <button onclick="changeQuantity(${cartItem.id}, 1)">+</button>
+                        `;
+                        clickedItemsContainer.appendChild(cartItemDiv);
+                    });
+
+                    subtotalElement.innerText = `₱${subtotal.toFixed(2)}`;
+                    totalElement.innerText = `₱${(subtotal * 1.12).toFixed(2)}`;
+                })
+                .catch(error => console.error('Error fetching cart:', error));
+        }
+
+        function changeQuantity(itemId, delta) {
+            fetch('http://localhost:3000/api/cart/quantity', {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ itemId, delta })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(cart => {
+                console.log('Updated Cart:', cart);
+                updateCart();
+            })
+            .catch(error => console.error('Error updating cart:', error));
+        }
+
+        function checkout() {
+            fetch('http://localhost:3000/checkout', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Checkout successful!');
+                    updateCart();
+                })
+                .catch(error => console.error('Error during checkout:', error));
+        }
+
+        fetchMenuItems('Hot Espresso');
+        fetchMenuItems('Iced Espresso');
+        fetchMenuItems('Pasta & Sandwiches');
+        updateCart();
+    </script>
+</body>
+</html>

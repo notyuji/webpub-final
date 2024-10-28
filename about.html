@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | Prom Coffee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .footer {
+            background-color: #4F4A45;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            flex: 1;
+            padding-right: 20px;
+            text-align: left;
+        }
+
+        .footer h5 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .registration-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-control {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #4F4A45;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b8630c;
+        }
+
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-link {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .social-link:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 629px) {
+            header img{
+                height: 70px;
+                padding-top: 12px;
+                margin-top: 10px;
+                padding-left: 15px;
+            }
+            header{
+                margin: 0;
+                padding: 0;
+                padding-bottom: 7px;
+            }
+            .container.active {
+                display: block;
+                z-index: -1;
+            }
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu a{
+                text-decoration: none;
+                color: #4F4A45;
+                
+            }
+            .mobile-menu li{
+                font-family: 'DM Sans', sans-serif;
+                font-weight: 600;
+                list-style: none;
+                border-bottom: solid 2px #4F4A45;
+                font-size: 20px;
+                letter-spacing: 5px;
+                padding-top: 60px;
+                padding-bottom: 10px;
+                margin-left: -25px;
+            }
+            .mobile-menu ul{
+                display: inline-block;
+            }
+            .mobile-menu.active {
+                text-align: center;
+                display: block;
+                width: 75%;
+                height: 55%;
+                background-color: white;
+                box-shadow: 0px 0px 10px #776B5D;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 999;
+                border-radius: 15px;
+            }
+            .burger-menu {
+                display: block;
+                padding-top: 20px;
+                padding-right: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+            .left-section{
+                background-color: transparent;
+            }
+            .left-section .content {
+                top: 350px;
+                display: block;
+            }
+            .left-section img{
+                margin-top: 30px;
+                width: auto;
+                height: 160px;
+            }
+            .right-section img{
+                width: auto;
+                height: 160px;
+                border: none;
+            }
+            .picture-section p{
+                font-weight: 200;
+	            font-size: 15px;
+            }
+            .video-section p{
+                font-weight: 200;
+	            font-size: 15px;
+            }
+            .left-section h2{
+                font-size: 23px;
+                padding: 0;
+                text-align: center;
+            }
+            .left-section p{
+                font-weight: 200;
+                font-size: 15px;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .right-section {
+                width: 100%;
+                background-color: transparent;
+                height: auto;
+                flex: auto;
+                text-align: center;
+                margin-top: 300px;
+            }
+
+            .right-section video {
+                width: auto;
+                height: 150px;
+                border-radius: 10px;
+                border: none;
+                margin: 0 auto;
+            }
+
+            .right-section .content {
+                color: #4F4A45;
+                max-width: 90%;
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                top: 30%;
+                transform: translate(-50%, -50%);
+            }
+            .middle-line {
+                display: block;
+                height: 3px;
+                background-color: #4F4A45;
+                width: 350px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 59%;
+            }
+
+            .right-section h2 {
+                font-size: 22.5px;
+                text-align: center;
+            }
+            .right-section p {
+                font-size: 15px;
+                padding-bottom: 10px;
+                margin-right: 10px;
+            }
+
+            
+        }
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-left {
+                padding-right: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .registration-form {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .form-control {
+                max-width: 100%;
+            }
+
+            .btn {
+                width: auto;
+                margin-top: 10px;
+            }
+        }
+        @media screen and (min-width: 630px) and (max-width: 1350px) {
+            header img{
+                height: 70px;
+                padding-top: 12px;
+                margin-top: 10px;
+                padding-left: 15px;
+            }
+            header{
+                margin: 0;
+                padding: 0;
+                padding-bottom: 7px;
+            }
+            
+            .container.active {
+                display: block;
+                z-index: -1;
+            }
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu a{
+                text-decoration: none;
+                color: #4F4A45;
+                
+            }
+            .mobile-menu li{
+                font-family: 'DM Sans', sans-serif;
+                font-weight: 600;
+                list-style: none;
+                border-bottom: solid 2px #4F4A45;
+                font-size: 20px;
+                letter-spacing: 5px;
+                padding-top: 55px;
+                padding-bottom: 10px;
+                margin-left: -25px;
+            }
+            .mobile-menu ul{
+                display: inline-block;
+                padding-bottom: 50px;
+            }
+            .mobile-menu.active {
+                text-align: center;
+                display: block;
+                width: 75%;
+                max-height: 67.5vh;
+                background-color: white;
+                box-shadow: 0px 0px 10px #776B5D;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 999;
+                border-radius: 15px;
+            }
+            .burger-menu {
+                display: block;
+                padding-top: 20px;
+                padding-right: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+            .right-section{
+                border-radius: 40px;
+            }
+            .right-section h2{
+                font-size: 30px;
+                text-align: center;
+            }
+            .tb-respon {
+            width: 100%;
+            overflow-x: auto;
+            }
+            .left-section h2{
+                font-size: 35px;
+                text-align: center;
+                padding-left: 0;
+            }
+            .left-section p{
+                text-align: center;
+                width: 100%;
+                padding: 0;
+            }
+            .container{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Your Logo">
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/order">Order</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/order">Order</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <div class="left-section">
+            <div class="content">
+                <div><img src="assets/infog.png" alt=""></div>
+                <h2>About Us</h2>
+                <p>Our cozy cafe is a haven for coffee enthusiasts seeking a delightful escape. With a commitment to quality beans, expertly crafted brews, and warm hospitality, we invite you to savor the rich flavors that define our unique coffee experience. We don't just serve coffee; we create moments of bliss one sip at a time.</p>
+            </div>
+        </div>
+        <div class="middle-line"></div>
+        <div class="right-section">
+            <div class="content">
+                <h2 class="ophrs">We're Brewing! Check Our Hours</h2>
+                <p>Start your day with us! Our coffee shop is open to serve you the finest brews. See our hours below and drop by for a fresh cup.</p>
+
+                <div><img src="assets/sched1.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    
+
+	
+    <div class="picture-section">
+        <h2>Our Café Moments</h2>
+        <p>Discover the perfect blend of comfort and delight at our café. From golden hour views and engaging activities to indulgent waffles and cozy coffee moments with a good book.</p>
+        <div class="picture-grid">
+            <div class="picture-item">
+                <img src="assets/pic1.jpg" alt="Our Coffee Beans">
+                <div class="picture-caption">Catch the last rays of the day with our coffee</div>
+            </div>
+            <div class="picture-item">
+                <img src="assets/pic2.jpg" alt="Barista at Work">
+                <div class="picture-caption">Sipping coffee, turning pages</div>
+            </div>
+            <div class="picture-item">
+                <img src="assets/pic3.jpg" alt="Cozy Corner">
+                <div class="picture-caption">Catch the last rays of the day with our finest coffee</div>
+            </div>
+            <div class="picture-item">
+                <img src="assets/pic4.jpg" alt="Coffee and Pastry">
+                <div class="picture-caption">Treat yourself to our freshly made waffles</div>
+            </div>
+            <div class="picture-item">
+                <img src="assets/pic5.jpg" alt="Friendly Atmosphere">
+                <div class="picture-caption">Experience coffee and more at our lively spot</div>
+            </div>
+        </div>
+    </div>
+	
+	<div class="video-section">
+		<h2>Featured Reels</h2>
+		<p>Catch a glimpse of our café magic, behind-the-scenes and delightful coffee moments. Watch and enjoy the essence of our café!</p>
+		<div class="video-grid">
+			<div class="video-item">
+				<video autoplay loop muted playsinline>
+					<source src="assets/23.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<div class="video-description">A sneak peek on how we make your favorite drinks</div>
+			</div>
+			<div class="video-item">
+				<video autoplay loop muted playsinline>
+					<source src="assets/3.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<div class="video-description">A delectable treat awaits you at TLC</div>
+			</div>
+			<div class="video-item">
+				<video autoplay loop muted playsinline>
+					<source src="assets/2.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<div class="video-description">Kickstart your day with our freshly brewed coffee</div>
+			</div>
+		</div>
+	</div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h5>Join Our Community!</h5>
+                <p>Subscribe now to get updated with the latest news and promotions from Prom Coffee!</p>
+    
+
+            </div>
+            
+            <form id="footerRegistrationForm" class="registration-form">
+                <input type="text" class="form-control" placeholder="Name" id="footerName" required>
+                <input type="email" class="form-control" placeholder="Email" id="footerEmail" required>
+                <input type="text" class="form-control" placeholder="Phone Number" id="footerPhone" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('footerRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('footerName').value;
+            const email = document.getElementById('footerEmail').value;
+            const phone = document.getElementById('footerPhone').value;
+    
+            fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, phone }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Registration successful!');
+                
+                document.getElementById('footerRegistrationForm').reset();
+            })
+            .catch(error => {
+                console.error('Error registering customer:', error);
+            });
+        });
+    </script>
+    
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.mobile-menu');
+            var container = document.querySelector('.container');
+            menu.classList.toggle('active');
+            container.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

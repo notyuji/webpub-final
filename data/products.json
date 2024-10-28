@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Hot Americano",
+        "description": "A bold hot espresso drink",
+        "price": 140.00,
+        "image": "assets/h_americano.png",
+        "category": "Hot Espresso"
+    },
+    {
+        "id": 2,
+        "name": "Hot Latte",
+        "description": "A smooth and creamy hot latte",
+        "price": 150.00,
+        "image": "assets/h_latte.png",
+        "category": "Hot Espresso"
+    },
+    {
+        "id": 3,
+        "name": "Hot Mocha",
+        "description": "Rich mocha flavor in a hot drink",
+        "price": 145.00,
+        "image": "assets/h_moch.png",
+        "category": "Hot Espresso"
+    },
+    {
+        "id": 4,
+        "name": "Iced Americano",
+        "description": "A refreshing iced espresso drink",
+        "price": 150.00,
+        "image": "assets/i_americ.png",
+        "category": "Iced Espresso"
+    },
+    {
+        "id": 5,
+        "name": "Iced Latte",
+        "description": "Creamy and cold latte on ice",
+        "price": 160.00,
+        "image": "assets/i_latte.png",
+        "category": "Iced Espresso"
+    },
+    {
+        "id": 6,
+        "name": "Iced Mocha",
+        "description": "Cold and refreshing mocha drink",
+        "price": 155.00,
+        "image": "assets/i_moch.png",
+        "category": "Iced Espresso"
+    },
+    {
+        "id": 7,
+        "name": "Shrimp & Basil Pasta",
+        "description": "Delicious pasta with shrimp and basil",
+        "price": 150.00,
+        "image": "assets/shrimp_p.png",
+        "category": "Pasta & Sandwiches"
+    },
+    {
+        "id": 8,
+        "name": "Pesto Pasta",
+        "description": "Classic pasta with a fresh pesto sauce",
+        "price": 130.00,
+        "image": "assets/pesto.png",
+        "category": "Pasta & Sandwiches"
+    },
+    {
+        "id": 9,
+        "name": "Cheesy Tortilla",
+        "description": "A tortilla filled with melted cheese",
+        "price": 120.00,
+        "image": "assets/tortila.png",
+        "category": "Pasta & Sandwiches"
+    }
+]

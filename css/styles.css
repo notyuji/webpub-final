@@ -1,0 +1,254 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEC;
+}
+.video-section {
+	padding: 50px 0;
+	background-color: #EEEEEC;
+	text-align: center;
+}
+.video-section h2 {
+	font-size: 23px;
+	color: #4F4A45;
+	margin-bottom: 20px;
+}
+.video-section p {
+	font-size: 16px;
+	color: #776B5D;
+	margin-bottom: 40px;
+}
+.video-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	padding: 0 20px;
+}
+.video-item {
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.video-item video {
+	width: auto;
+	height: 100%;
+	max-height: 500px;
+	border-radius: 10px;
+	object-fit: cover;
+}
+.video-item .video-description {
+	padding: 15px;
+	color: #4F4A45;
+	font-size: 14px;
+	text-align: center;
+}
+.picture-section {
+	padding: 50px 0;
+	background-color: #EEEEEC;
+	text-align: center;
+}
+.picture-section h2 {
+	font-size: 23px;
+	color: #4F4A45;
+	margin-bottom: 20px;
+}
+.picture-section p {
+	color: #776B5D;
+	margin-bottom: 40px;
+}
+.picture-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+	padding: 0 20px;
+}
+.picture-item {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.picture-item img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	transition: transform 0.3s ease;
+}
+.picture-item:hover img {
+	transform: scale(1.05);
+}
+.picture-caption {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	font-size: 14px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+header {
+    color: #4F4A45;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 70px 20px;
+}
+
+header img {
+    width: auto;
+    height: auto;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #4F4A45;
+    text-decoration: none;
+    margin: 0 82.5px;
+    font-size: 15.5px;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+}
+
+.container {
+    display: flex;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 15px;
+}
+
+.left-section {
+    flex: 1;
+    background-color: #EEEEEC;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    color: #4F4A45;
+}
+
+.right-section h2 {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.right-section {
+    flex: 0 0 50%;
+    background-color: #4F4A45;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    border-radius: 40px 0px 0px 40px;
+}
+.middle-line{
+    display: none;
+}
+.content {
+    margin-top: 20px;
+    position: relative;
+}
+.left-section h2{
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: left;
+    padding-left: 115px;
+}
+.left-section p{
+    width: 75%;
+    text-align: left;
+    padding-left: 115px;
+    color: #776B5D;
+}
+.right-section p{
+    font-weight: 200;
+}
+.right-section .content {
+    max-width: 100%;
+}
+.left-section img{
+    height: 350px;
+    width: 650px;
+    max-width: 100%;
+    border: solid 5px #EEEEEC;
+    border-radius: 20px;
+}
+.right-section img{
+    height: 350px;
+    width: 650px;
+    max-width: 100%;
+	margin-top: 25px;
+    border-radius: 20px;
+}
+.section-header {
+    font-size: 24px;
+}
+
+.section-text {
+    font-size: 20px;
+    font-weight: 200;
+    padding-left: 50px;
+    margin-top: -50px;
+}
+
+video{
+    width:640px;
+    height:340px;
+    border: solid 5px white;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #4F4A45;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.container.active nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.div1.active{
+    margin-top: 0px;
+    transform: rotate(-45deg) translate(-5px, 5.5px);
+    position: fixed;
+    background-color: #B3A492;
+}
+    
+.div2.active {
+    opacity: 0;
+}
+    
+.div3.active{
+    margin-top: 0px;
+    position: fixed;
+    background-color: #B3A492;
+    transform: rotate(45deg) translate(-5px, -5.5px);
+}
+.mobile-menu{
+    display: none;
+}

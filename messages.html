@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Messages | Prom Coffee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #4F4A45;
+        }
+        a{
+            color: #4F4A45;
+        }
+        a:hover{
+            color: #4F4A45;
+        }
+        h2 {
+            font-weight: bold;
+        }
+        .header {
+            background-color: white;
+            color: #fff;
+            padding: 15px;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header text-center">
+        <img src="assets/logo.png" alt="Your Logo">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">Home</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/order">Order</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/messages">Messages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/customers">Customers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <h2 class="text-center">Customer Messages</h2>
+
+        <div class="search-container">
+            <form class="form-inline" id="searchForm">
+                <input class="form-control mr-2" type="search" placeholder="Search messages..." aria-label="Search" id="searchInput">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+        </div>
+
+        <table class="table table-bordered" id="messagesTable">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Platform</th>
+                    <th>Message</th>
+                    <th>Date Sent</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="messagesTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        fetch('/api/messages')
+            .then(response => response.json())
+            .then(messages => {
+                populateTable(messages);
+            })
+            .catch(error => {
+                console.error('Error fetching messages:', error);
+            });
+
+        function populateTable(messages) {
+            const messagesTableBody = document.getElementById('messagesTableBody');
+            messagesTableBody.innerHTML = '';
+            messages.forEach((message, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${message.name}</td>
+                    <td>${message.email}</td>
+                    <td>${message.platform}</td>
+                    <td>${message.message}</td>
+                    <td>${new Date(message.date).toLocaleString()}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="deleteMessage(${index})">Delete</button>
+                    </td>
+                `;
+                messagesTableBody.appendChild(row);
+            });
+        }
+
+        function deleteMessage(index) {
+            fetch(`/api/messages/${index}`, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data.message);
+                fetch('/api/messages')
+                    .then(response => response.json())
+                    .then(messages => {
+                        populateTable(messages);
+                    });
+            })
+            .catch(error => {
+                console.error('Error deleting message:', error);
+            });
+        }
+
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const searchTerm = searchInput.value.toLowerCase();
+
+            fetch('/api/messages')
+                .then(response => response.json())
+                .then(messages => {
+                    const filteredMessages = messages.filter(message => 
+                        message.name.toLowerCase().includes(searchTerm) ||
+                        message.email.toLowerCase().includes(searchTerm) ||
+                        message.platform.toLowerCase().includes(searchTerm) ||
+                        message.message.toLowerCase().includes(searchTerm)
+                    );
+                    populateTable(filteredMessages);
+                })
+                .catch(error => {
+                    console.error('Error fetching messages:', error);
+                });
+        });
+    </script>
+</body>
+</html>
